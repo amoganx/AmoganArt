@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Landing Page</title>
+    <style>
+        /* Basic reset and full-screen setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Background slideshow container */
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Individual background images */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fade 24s infinite, pan 40s infinite linear alternate;
+        }
+
+       .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;   /* keeps top anchored */
+    background-repeat: no-repeat;
+    background-image: url('Background.jpg');  
+    opacity: 0;
+    animation: fadeIn 3s forwards;     /* fades in over 3 seconds, then stops */
+}
+
+      @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+        
+
+        /* Top-left content container */
+        .content {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between logo and icons row */
+            z-index: 10;
+        }
+
+       
+
+
+        /* Social icons - now horizontal */
+        .social-icons {
+            display: flex;
+            flex-direction: row;   /* Horizontal layout */
+            gap: 40px;             /* Space between icons */
+            align-items: center;
+        }
+
+        .social-icons a {
+            display: block;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons img {
+      
+            filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+            transition: all 0.4s ease;
+        }
+
+        /* Hover effects: soft gold tint, scale, glow */
+        .social-icons a:hover img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+            transform: scale(1.25);
+        }
+
+        
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 640px) {
+            .content {
+                top: 20px;
+                left: 20px;
+            }
+            .logo {
+                width: 140px;
+            }
+            .social-icons {
+                gap: 30px;
+            }
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background slideshow -->
+   <div class="background-slideshow">
+    <div class="bg-image"></div>
+</div>
+
+    <!-- Top-left content -->
+    <div class="content">
+        <img src="amogan.png" alt="Amogan" class="logo">
+        
+
+        <div class="social-icons">
+            <a href="mailto:hello@amogan.art" title="Send me an email">
+                <img src="email-icon.png" alt="Email">
+            </a>
+            <a href="https://www.instagram.com/amoganx" target="_blank">
+                <img src="Instagram.png" alt="Instagram">
+            </a>
+            <a href="https://x.com/amoganart" target="_blank">
+                <img src="X.png" alt="X (Twitter)">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>	
